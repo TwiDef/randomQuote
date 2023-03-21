@@ -6,7 +6,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 34px;
     background-color: #8BC6EC;
-background-image: linear-gradient(90deg, #8BC6EC 0%, #9599E2 100%);
+    background-image: linear-gradient(90deg, #8BC6EC 0%, #9599E2 100%);
 
 }
 .container {
@@ -18,6 +18,7 @@ background-image: linear-gradient(90deg, #8BC6EC 0%, #9599E2 100%);
     justify-content: center;
     height: 100vh;
 }
+
 .quote-box__text {
     margin-bottom: 2%;
 }

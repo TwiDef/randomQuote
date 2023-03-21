@@ -6,18 +6,18 @@ const quoteAuthor = document.querySelector('.quote-box__author');
 async function getapi(url) {
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
-    return await data;
+    return data;
 }
 
-btn.addEventListener('click', () => {
-    getapi(api_url).then(data => insertQuete(data.quotes[Math.trunc(Math.random() * 30)].quote));
-    getapi(api_url).then(data => insertQueteAuthor(`"${data.quotes[Math.trunc(Math.random() * 30)].author}"`));
+btn.addEventListener('click', async (e) => {
+    const data = await getapi(api_url);
+    let randomNum = Math.trunc(Math.random() * 30);
+
+    const quotesData = {
+        quote: data.quotes[randomNum].quote,
+        author: data.quotes[randomNum].author
+    };
+
+    quoteText.textContent = `"${quotesData.quote}"`;
+    quoteAuthor.textContent = `"${quotesData.author}"`;
 });
-
-function insertQuete(quote) {
-    quoteText.textContent = quote;
-}
-function insertQueteAuthor(author) {
-    quoteAuthor.textContent = author;
-}
